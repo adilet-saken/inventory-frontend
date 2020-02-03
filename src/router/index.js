@@ -1,24 +1,38 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
+import Employees from '@/views/Employees.vue';
+import EmployeeAdd from '@/views/EmployeeAdd.vue';
+import Employee from '@/views/Employee.vue';
+import Device from '@/views/Device.vue';
+import DeviceAdd from '@/views/DeviceAdd.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: Home,
+    name: 'employees',
+    component: Employees,
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component() {
-      return import(/* webpackChunkName: "about" */ '../views/About.vue');
-    },
+    path: '/employee',
+    name: 'employee-add',
+    component: EmployeeAdd,
+  },
+  {
+    path: '/employee/:id',
+    name: 'employee',
+    component: Employee,
+  },
+  {
+    path: '/employee/:id/devices',
+    name: 'employee-devices',
+    component: DeviceAdd,
+  },
+  {
+    path: '/device/:id',
+    name: 'device',
+    component: Device,
   },
 ];
 
