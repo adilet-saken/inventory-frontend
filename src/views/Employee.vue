@@ -107,7 +107,7 @@ export default {
       });
     },
     deleteDevice(id) {
-      if (window.confirm('Вы действительно хотите данный девайс?')) {
+      if (window.confirm('Вы действительно хотите удалить данный девайс?')) {
         this.$http.delete(`/devices/${id}`)
           .then((response) => {
             if (response.status === 200) {
